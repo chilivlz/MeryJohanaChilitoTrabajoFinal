@@ -1,0 +1,239 @@
+/* tablet responsive*/
+
+
+
+@mixin media($breakpoint){
+    @if $breakpoint == tablet{
+            @media (min-width: 768px){
+                    @content;
+            }
+    }
+    @if $breakpoint == desktop {
+            @media (min-width:1200px){
+                    @content; 
+                    
+            }
+
+            @if $breakpoint == mobile{
+                @media (min-width:280px){
+                        @content;
+                }
+            }
+    }
+}
+
+//tablet//
+
+.main-p{
+    
+        display: flex;
+        justify-content: space-between;
+       
+    .img-container{
+        @include media (tablet){
+            background-image:url(../Imagenes/meilustracionprincipal.webp);
+            background-position: center center;
+            width: 200rem;
+            height: auto;
+            margin: 30px;
+            margin-left: 80px;
+            
+         
+    
+        }
+    
+    }
+
+}
+
+.main-blog {
+        @include media (tablet){
+        display: flex;
+        justify-content: left;
+        height: 15%;
+        padding: 0px 30px;
+        line-height: 1.1;
+        margin: 8px 0px;
+        text-align: center;
+     
+         }
+ }
+     
+
+
+
+
+
+
+
+.prod-dos{
+
+        @include media (desktop){
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 95%;
+            margin: 10px auto;
+            padding-top: 16;
+    
+        }
+        .prod-img-c{
+            height: 100%;
+        }
+        
+    
+}
+
+//desptok//
+    
+.main-p{
+        @include media (desktop){
+        display: flex;
+        justify-content: space-between; }
+     
+
+     }
+       
+    .img-container{
+        @include media (desktop){
+            background-image:url(../Imagenes/0afd14d064e603c5e00301da90a74db9-min.webp);
+            background-position: center center;
+            width: 200rem;
+            height: auto;
+            margin: 30px;
+            margin-left: 30px;
+         
+    
+        }
+    
+    }
+
+
+    
+    
+.main-blog {
+       @include media (desktop){
+       display: flex;
+       justify-content: left;
+       height: 15%;
+       padding: 0px 30px;
+       line-height: 1.1;
+       margin: 8px 0px;
+    
+        }
+}
+
+
+    
+.acerca-de-mi {
+    @include media(desktop){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;    
+
+         .acerca-img{
+                @include img(auto,40rem,10px,10px,10px);
+                margin-top: 20px;
+                padding-right: 10px;
+                padding-left: 5px;
+
+                .acerca-de-mi p{
+                    padding-right: 20px;
+                }
+
+                .acerca-txt{
+                    margin-top: 25px;
+                
+                 }
+
+            }
+        
+
+    }
+}
+
+//galeria - arte//
+
+.grid-wrapper{
+   @include grid-wrapper (60px,30x,30px,10px,10px 10px, 100% auto,middle,inline-block);
+   .grid-item{
+    &:hover{
+        filter: opacity(0.9);
+        transform: scale(1.04);
+    }
+   }
+}
+
+/* grid galeriai mg*/
+
+.title-grid {
+  
+    @extend .main-text;
+    
+}
+.grid-wrapper  > div {
+    
+  @include flex( flex,center,center,center)
+     
+}
+.grid-wrapper > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.grid-wrapper{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+}
+
+
+
+
+@media (min-width: 760px) {
+    .wide{
+    grid-column: span 2;
+}
+
+.tall{
+    grid-row: span 2;
+
+
+}
+
+}
+
+
+
+    
+
+ 
+
+
+     
+     
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
